@@ -9,24 +9,4 @@
   grid-template-columns: 2fr 10fr;
   /* grid-gap: 10px; */
 }
-.header img{
-  width: 75px;
-}
-.avatar img{
-  width: 15%;
-}
 
-.header{
-  grid-area: h;
-  background-color:cadetblue;
-}
-
-.nav{
-   grid-area: n;
-   background-color:chartreuse;
-}
-
-.content{
-   grid-area: c;
-   background-color:chocolate;
-}

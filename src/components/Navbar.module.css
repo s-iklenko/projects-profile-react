@@ -1,0 +1,16 @@
+.nav {
+   grid-area: n;
+   background-color:chartreuse;
+}
+
+a{
+    text-decoration: none;
+}
+
+.item{
+    font-size: 20px;
+    color: white;
+}
+.active{
+    color: tomato;
+}
