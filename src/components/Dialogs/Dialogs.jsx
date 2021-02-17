@@ -1,41 +1,41 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import x from './Dialogs.module.css';
-
-const DialogItem = (props) => {
-    let path = '/dialogs/' + props.id;
-
-    return (
-        <div className={`${x.dialog} ${x.active}`}>
-            <NavLink to={path}>{props.name}</NavLink>
-        </div>
-    )
-}
-
-const Message = (props) => {
-    return (
-        <div className={x.dialog}>{props.message}</div>
-    )
-}
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
 
 const Dialogs = (props) => {
+
+    let dialogs = [
+        { id: 1, name: 'Lena' },
+        { id: 2, name: 'Dimas' },
+        { id: 3, name: 'Alex' },
+        { id: 4, name: 'Andrew' },
+        { id: 5, name: 'Oleg' },
+        { id: 6, name: 'Mam' },
+        { id: 7, name: 'Dad' },
+    ];
+
+    let messages = [
+        { id: 1, message: 'Hi' },
+        { id: 2, message: 'How are you?' },
+        { id: 3, message: 'Hello' },
+        { id: 4, message: 'Hello' },
+        { id: 5, message: 'Hello' },
+        { id: 6, message: 'Hello' },
+        { id: 7, message: 'Hello' },
+    ];
+
+    let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
+    let messagesElements = messages.map(m => <Message message={m.message} />)
+
+
     return (
         <div className={x.dialogs}>
             <div className={x.dialogsItems}>
-
-                <DialogItem name='Lena' id='1' />
-                <DialogItem name='Dimas' id='2' />
-                <DialogItem name='Alex' id='3' />
-                <DialogItem name='Andrey' id='4' />
-                <DialogItem name='Oleg' id='5' />
-                <DialogItem name='Mam' id='6' />
-                <DialogItem name='Dad' id='7' />
-
+                {dialogsElements}
             </div>
             <div className={x.messages}>
-                <Message message='Hi' />
-                <Message message='How are you?' />
-                <Message message='Hello' />
+                {messagesElements}
             </div>
         </div>
     )
