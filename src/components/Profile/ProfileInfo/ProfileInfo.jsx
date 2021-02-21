@@ -2,6 +2,9 @@ import React from "react";
 import x from './ProfileInfo.module.css';
 
 const ProfileInfo = (props) => {
+
+
+
     return (
         <div>
             <div>
