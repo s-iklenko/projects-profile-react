@@ -17,15 +17,24 @@ let state = {
             { id: 7, name: 'Dad', avatar: 'https://demiart.ru/forum/journal_uploads13/j2406363_1591724080_0.jpg' },
         ],
         messages: [
-            { id: 1, message: 'Hi' },
-            { id: 2, message: 'How are you?' },
-            { id: 3, message: 'Hello' },
-            { id: 4, message: 'Hello' },
-            { id: 5, message: 'Hello' },
-            { id: 6, message: 'Hello' },
-            { id: 7, message: 'Hello' },
+            { id: 1, message: 'Hello', avatarUser: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' },
+            { id: 2, message: 'Hello', avatarUser: 'https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png' },
+            { id: 3, message: 'How are you?', avatarUser: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' },
+            { id: 4, message: 'I am fine', avatarUser: 'https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png' },
+            { id: 5, message: 'And you?', avatarUser: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' },
+            { id: 6, message: 'I am great', avatarUser: 'https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png' },
+            { id: 7, message: 'Super', avatarUser: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' },
         ]
     }
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    };
+    state.profilePage.posts.push(newPost)
 }
 
 export default state;
