@@ -32,4 +32,16 @@
     padding: 5px;
     color: white;
 }
+.text{
+    display: flex;
+}
 
+.text textarea{
+    width: 500px;
+    height: 50px;
+}
+
+.text button{
+    width: 100px;
+    height: 50px;
+}

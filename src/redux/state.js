@@ -1,4 +1,6 @@
-let state = {
+import { rerenderTree } from '../render';
+
+export let state = {
     profilePage: {
         posts: [
             { id: 1, message: 'Hi, how are you?', likesCount: 15 },
@@ -34,7 +36,16 @@ export let addPost = (postMessage) => {
         message: postMessage,
         likesCount: 0
     };
-    state.profilePage.posts.push(newPost)
+    state.profilePage.posts.push(newPost);
+    rerenderTree(state);
 }
 
-export default state;
+export let addMessage = (sendMessage) => {
+    let newMessage = {
+        id: 8,
+        message: sendMessage,
+        avatarUser: 'https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png'
+    };
+    state.dialogsPage.messages.push(newMessage);
+    rerenderTree(state);
+}
