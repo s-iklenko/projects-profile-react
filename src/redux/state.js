@@ -5,7 +5,8 @@ export let state = {
         posts: [
             { id: 1, message: 'Hi, how are you?', likesCount: 15 },
             { id: 2, message: 'It is my first post', likesCount: 25 }
-        ]
+        ],
+        newPostText: ''
 
     },
     dialogsPage: {
@@ -26,26 +27,38 @@ export let state = {
             { id: 5, message: 'And you?', avatarUser: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' },
             { id: 6, message: 'I am great', avatarUser: 'https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png' },
             { id: 7, message: 'Super', avatarUser: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' },
-        ]
+        ],
+        newMessageText: ''
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderTree(state);
+}
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
     rerenderTree(state);
 }
 
-export let addMessage = (sendMessage) => {
+export let addMessage = () => {
     let newMessage = {
         id: 8,
-        message: sendMessage,
+        message: state.dialogsPage.newMessageText,
         avatarUser: 'https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png'
     };
     state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderTree(state);
+}
+
+export let updateNewMessageText = (newMessage) => {
+    state.dialogsPage.newMessageText = newMessage;
     rerenderTree(state);
 }
